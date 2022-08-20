@@ -143,12 +143,7 @@
 				85AD03D528B13DC500BCD22F /* Scenes */,
 				85AD03D428B13DBE00BCD22F /* Utilities */,
 				85AD03D328B13DB900BCD22F /* Core */,
-				8597102328B0766B00A350BE /* AppDelegate.swift */,
-				8597102528B0766B00A350BE /* SceneDelegate.swift */,
 				8597102728B0766B00A350BE /* ViewController.swift */,
-				8597102928B0766B00A350BE /* Main.storyboard */,
-				8597102C28B0766C00A350BE /* Assets.xcassets */,
-				8597102E28B0766C00A350BE /* LaunchScreen.storyboard */,
 				8597103128B0766C00A350BE /* Info.plist */,
 			);
 			path = RecipesAppDemo;
@@ -174,6 +169,8 @@
 		85AD03D328B13DB900BCD22F /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				8597102328B0766B00A350BE /* AppDelegate.swift */,
+				8597102528B0766B00A350BE /* SceneDelegate.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -181,6 +178,9 @@
 		85AD03D428B13DBE00BCD22F /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				8597102928B0766B00A350BE /* Main.storyboard */,
+				8597102C28B0766C00A350BE /* Assets.xcassets */,
+				8597102E28B0766C00A350BE /* LaunchScreen.storyboard */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -188,6 +188,8 @@
 		85AD03D528B13DC500BCD22F /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				85AD03D728B13E4F00BCD22F /* ProductsPage */,
+				85AD03D828B13E9400BCD22F /* ProductDetailsPage */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -197,6 +199,20 @@
 			children = (
 			);
 			path = NetworkCorner;
+			sourceTree = "<group>";
+		};
+		85AD03D728B13E4F00BCD22F /* ProductsPage */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ProductsPage;
+			sourceTree = "<group>";
+		};
+		85AD03D828B13E9400BCD22F /* ProductDetailsPage */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ProductDetailsPage;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
