@@ -165,6 +165,7 @@
 		8597102228B0766B00A350BE /* RecipesAppDemo */ = {
 			isa = PBXGroup;
 			children = (
+				85A1D82728B2CEF100AA11D5 /* NetworkAPI */,
 				85AD03D628B13DCC00BCD22F /* NetworkCorner */,
 				85AD03D528B13DC500BCD22F /* Scenes */,
 				85AD03D428B13DBE00BCD22F /* Utilities */,
@@ -189,6 +190,13 @@
 				8597104628B0766D00A350BE /* RecipesAppDemoUITestsLaunchTests.swift */,
 			);
 			path = RecipesAppDemoUITests;
+			sourceTree = "<group>";
+		};
+		85A1D82728B2CEF100AA11D5 /* NetworkAPI */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = NetworkAPI;
 			sourceTree = "<group>";
 		};
 		85AD03D328B13DB900BCD22F /* Core */ = {
