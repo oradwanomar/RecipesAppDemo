@@ -17,6 +17,7 @@
 		8597103B28B0766D00A350BE /* RecipesAppDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8597103A28B0766D00A350BE /* RecipesAppDemoTests.swift */; };
 		8597104528B0766D00A350BE /* RecipesAppDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8597104428B0766D00A350BE /* RecipesAppDemoUITests.swift */; };
 		8597104728B0766D00A350BE /* RecipesAppDemoUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8597104628B0766D00A350BE /* RecipesAppDemoUITestsLaunchTests.swift */; };
+		85A1D82A28B2D0AC00AA11D5 /* Remote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A1D82928B2D0AC00AA11D5 /* Remote.swift */; };
 		85AD03DB28B13F7000BCD22F /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AD03DA28B13F7000BCD22F /* Settings.swift */; };
 		85AD03F528B159B500BCD22F /* ProductsViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AD03F128B159B500BCD22F /* ProductsViewModelType.swift */; };
 		85AD03F628B159B500BCD22F /* ProductsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AD03F228B159B500BCD22F /* ProductsViewController.swift */; };
@@ -68,6 +69,7 @@
 		8597104028B0766D00A350BE /* RecipesAppDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RecipesAppDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8597104428B0766D00A350BE /* RecipesAppDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesAppDemoUITests.swift; sourceTree = "<group>"; };
 		8597104628B0766D00A350BE /* RecipesAppDemoUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesAppDemoUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		85A1D82928B2D0AC00AA11D5 /* Remote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Remote.swift; path = ../../../../../Remote.swift; sourceTree = "<group>"; };
 		85AD03DA28B13F7000BCD22F /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		85AD03F128B159B500BCD22F /* ProductsViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsViewModelType.swift; sourceTree = "<group>"; };
 		85AD03F228B159B500BCD22F /* ProductsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsViewController.swift; sourceTree = "<group>"; };
@@ -201,6 +203,7 @@
 		85A1D82828B2D00800AA11D5 /* RemoteAPI */ = {
 			isa = PBXGroup;
 			children = (
+				85A1D82928B2D0AC00AA11D5 /* Remote.swift */,
 			);
 			path = RemoteAPI;
 			sourceTree = "<group>";
@@ -536,6 +539,7 @@
 				85AD03F728B159B500BCD22F /* ProductsViewModel.swift in Sources */,
 				85AD040C28B1D3B300BCD22F /* FilterCell.swift in Sources */,
 				85AD040228B174AB00BCD22F /* ProductDetailsViewModel.swift in Sources */,
+				85A1D82A28B2D0AC00AA11D5 /* Remote.swift in Sources */,
 				85AD03F528B159B500BCD22F /* ProductsViewModelType.swift in Sources */,
 				85AD03FB28B16D3100BCD22F /* ProductCollectionViewCell.swift in Sources */,
 				85AD040028B174AB00BCD22F /* ProductDetailsViewModelType.swift in Sources */,
