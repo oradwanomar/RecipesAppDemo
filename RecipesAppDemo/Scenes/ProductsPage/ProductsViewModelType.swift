@@ -20,5 +20,5 @@ protocol ProductsViewModelInput {
 /// Products ViewModel Output
 ///
 protocol ProductsViewModelOutput {
-
+//    func getProducts(completion: @escaping ([Product])->Void)
 }
