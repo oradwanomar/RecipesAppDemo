@@ -9,16 +9,31 @@ import UIKit
 
 class FilterCell: UICollectionViewCell {
     static let identifier = "FilterCell"
-
-    @IBOutlet weak var filterName: UILabel!
     
-    @IBOutlet weak var filterView: UIView!
+    lazy var label: UILabel = {
+        let label = UILabel()
+        label.text = "Hello"
+        label.textColor = .label
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        filterView.clipsToBounds = true
-        filterView.layer.cornerRadius = 10
-        // Initialization code
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        addSubview(label)
+        setUpConstrains()
+    }
+    
+    func setUpConstrains(){
+        NSLayoutConstraint.activate([
+            label.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 0),
+            label.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 0),
+            label.heightAnchor.constraint(equalToConstant: 30)
+        ])
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
 }
