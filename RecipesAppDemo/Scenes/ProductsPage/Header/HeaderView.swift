@@ -20,13 +20,11 @@ class HeaderView: UICollectionReusableView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         commonInit()
-        setUpCollection()
     }
 
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         commonInit()
-        setUpCollection()
     }
 
     private func commonInit() {
@@ -34,18 +32,28 @@ class HeaderView: UICollectionReusableView {
         addSubview(contentView)
         contentView.frame = bounds
         contentView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
+        let spacer = UIView()
+        spacer.setDimensions(height: 60, width: 12)
+        searchTextView.leftView = spacer
+        searchTextView.leftViewMode = .always
+        searchTextView.layer.cornerRadius = 10
+        setUpCollection()
     }
     
     func setUpCollection() {
-        filterCollectionView.dataSource = self
         filterCollectionView.delegate = self
+        filterCollectionView.dataSource = self
         filterCollectionView.register(FilterCell.self, forCellWithReuseIdentifier: FilterCell.identifier)
     }
 }
 
-extension HeaderView: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+extension HeaderView: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        1
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        4
+        6
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -54,7 +62,14 @@ extension HeaderView: UICollectionViewDelegate, UICollectionViewDataSource, UICo
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        CGSize(width: 100, height: 40)
+        CGSize(width: 70, height: 50)
     }
+    
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+//        return 15
+//    }
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+//        return 15
+//    }
     
 }

@@ -20,5 +20,5 @@ class FilterCell: UICollectionViewCell {
         filterView.layer.cornerRadius = 10
         // Initialization code
     }
-
+    
 }
