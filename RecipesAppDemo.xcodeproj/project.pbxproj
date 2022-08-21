@@ -17,7 +17,6 @@
 		8597103B28B0766D00A350BE /* RecipesAppDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8597103A28B0766D00A350BE /* RecipesAppDemoTests.swift */; };
 		8597104528B0766D00A350BE /* RecipesAppDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8597104428B0766D00A350BE /* RecipesAppDemoUITests.swift */; };
 		8597104728B0766D00A350BE /* RecipesAppDemoUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8597104628B0766D00A350BE /* RecipesAppDemoUITestsLaunchTests.swift */; };
-		85A1D82628B2CD4A00AA11D5 /* RemoteValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A1D82528B2CD4A00AA11D5 /* RemoteValidator.swift */; };
 		85AD03DB28B13F7000BCD22F /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AD03DA28B13F7000BCD22F /* Settings.swift */; };
 		85AD03F528B159B500BCD22F /* ProductsViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AD03F128B159B500BCD22F /* ProductsViewModelType.swift */; };
 		85AD03F628B159B500BCD22F /* ProductsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AD03F228B159B500BCD22F /* ProductsViewController.swift */; };
@@ -69,7 +68,6 @@
 		8597104028B0766D00A350BE /* RecipesAppDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RecipesAppDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8597104428B0766D00A350BE /* RecipesAppDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesAppDemoUITests.swift; sourceTree = "<group>"; };
 		8597104628B0766D00A350BE /* RecipesAppDemoUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesAppDemoUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		85A1D82528B2CD4A00AA11D5 /* RemoteValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RemoteValidator.swift; path = ../../../../../RemoteValidator.swift; sourceTree = "<group>"; };
 		85AD03DA28B13F7000BCD22F /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		85AD03F128B159B500BCD22F /* ProductsViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsViewModelType.swift; sourceTree = "<group>"; };
 		85AD03F228B159B500BCD22F /* ProductsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsViewController.swift; sourceTree = "<group>"; };
@@ -230,11 +228,6 @@
 		85AD03D628B13DCC00BCD22F /* NetworkCorner */ = {
 			isa = PBXGroup;
 			children = (
-				85AD03E828B1450000BCD22F /* Network */,
-				85AD03E728B144FA00BCD22F /* Remote */,
-				85AD03E428B1421D00BCD22F /* Requests */,
-				85AD03DF28B1408100BCD22F /* Models */,
-				85AD03DC28B1402A00BCD22F /* Validators */,
 				85AD03D928B13F6300BCD22F /* Settigns */,
 			);
 			path = NetworkCorner;
@@ -271,42 +264,6 @@
 				85AD03DA28B13F7000BCD22F /* Settings.swift */,
 			);
 			path = Settigns;
-			sourceTree = "<group>";
-		};
-		85AD03DC28B1402A00BCD22F /* Validators */ = {
-			isa = PBXGroup;
-			children = (
-				85A1D82528B2CD4A00AA11D5 /* RemoteValidator.swift */,
-			);
-			path = Validators;
-			sourceTree = "<group>";
-		};
-		85AD03DF28B1408100BCD22F /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		85AD03E428B1421D00BCD22F /* Requests */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Requests;
-			sourceTree = "<group>";
-		};
-		85AD03E728B144FA00BCD22F /* Remote */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Remote;
-			sourceTree = "<group>";
-		};
-		85AD03E828B1450000BCD22F /* Network */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Network;
 			sourceTree = "<group>";
 		};
 		85AD03F928B16CDE00BCD22F /* ProductCell */ = {
@@ -576,7 +533,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				85A1D82628B2CD4A00AA11D5 /* RemoteValidator.swift in Sources */,
 				85AD03F728B159B500BCD22F /* ProductsViewModel.swift in Sources */,
 				85AD040C28B1D3B300BCD22F /* FilterCell.swift in Sources */,
 				85AD040228B174AB00BCD22F /* ProductDetailsViewModel.swift in Sources */,
