@@ -192,9 +192,17 @@
 		85A1D82728B2CEF100AA11D5 /* NetworkAPI */ = {
 			isa = PBXGroup;
 			children = (
+				85A1D82828B2D00800AA11D5 /* RemoteAPI */,
 				85AD03D928B13F6300BCD22F /* Settigns */,
 			);
 			path = NetworkAPI;
+			sourceTree = "<group>";
+		};
+		85A1D82828B2D00800AA11D5 /* RemoteAPI */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = RemoteAPI;
 			sourceTree = "<group>";
 		};
 		85AD03D328B13DB900BCD22F /* Core */ = {
