@@ -22,7 +22,7 @@ extension ProductsViewModel: ProductsViewModelInput {
 // MARK: ProductsViewModelOutput
 //
 extension ProductsViewModel: ProductsViewModelOutput {
-
+      
 }
 
 // MARK: Private Handlers

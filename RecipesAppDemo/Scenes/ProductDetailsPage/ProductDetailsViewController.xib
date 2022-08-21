@@ -4,11 +4,14 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProductDetailsViewController" customModule="RecipesAppDemo" customModuleProvider="target">
             <connections>
+                <outlet property="bluredView" destination="I9A-uM-oTr" id="iPV-dK-Qcc"/>
+                <outlet property="productImage" destination="Yqm-L1-qfh" id="oJh-Xq-DAk"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -22,23 +25,78 @@
                 </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I9A-uM-oTr">
                     <rect key="frame" x="0.0" y="262.66666666666669" width="390" height="150"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eq1-VH-Z4Q">
+                            <rect key="frame" x="23" y="64" width="171" height="21"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                            </userDefinedRuntimeAttributes>
+                        </label>
+                    </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
+                        <constraint firstItem="eq1-VH-Z4Q" firstAttribute="top" secondItem="I9A-uM-oTr" secondAttribute="top" constant="64" id="7VY-Fx-FaO"/>
+                        <constraint firstItem="eq1-VH-Z4Q" firstAttribute="leading" secondItem="I9A-uM-oTr" secondAttribute="leading" constant="23" id="qz7-I8-7Td"/>
                         <constraint firstAttribute="height" constant="150" id="s6C-5n-wGI"/>
+                        <constraint firstAttribute="trailing" secondItem="eq1-VH-Z4Q" secondAttribute="trailing" constant="196" id="xvk-r5-eEY"/>
+                        <constraint firstAttribute="bottom" secondItem="eq1-VH-Z4Q" secondAttribute="bottom" constant="65" id="yOz-XD-ePt"/>
                     </constraints>
                 </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y0w-E8-AFn">
+                    <rect key="frame" x="16" y="490" width="358" height="20.333333333333314"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="DPA-RP-THq">
+                    <rect key="frame" x="16" y="750" width="358" height="60"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZqA-qx-Qjb">
+                            <rect key="frame" x="0.0" y="0.0" width="123.33333333333333" height="60"/>
+                            <color key="tintColor" systemColor="labelColor"/>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" image="heart" catalog="system"/>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yRb-Ei-s2o">
+                            <rect key="frame" x="123.33333333333336" y="0.0" width="234.66666666666663" height="60"/>
+                            <color key="backgroundColor" red="1" green="0.71953410110000005" blue="0.2066434469" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <color key="tintColor" systemColor="labelColor"/>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" title="Go to site"/>
+                        </button>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="60" id="upw-n2-s6s"/>
+                    </constraints>
+                </stackView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstAttribute="trailing" secondItem="DPA-RP-THq" secondAttribute="trailing" constant="16" id="2Vu-Wf-h52"/>
                 <constraint firstItem="I9A-uM-oTr" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="3yk-l8-PKR"/>
+                <constraint firstItem="DPA-RP-THq" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.917949" id="D5C-NT-Xds"/>
                 <constraint firstAttribute="trailing" secondItem="I9A-uM-oTr" secondAttribute="trailing" id="KjN-Wt-lEC"/>
                 <constraint firstItem="Yqm-L1-qfh" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="PfY-C8-uHd"/>
                 <constraint firstItem="I9A-uM-oTr" firstAttribute="top" secondItem="Yqm-L1-qfh" secondAttribute="bottom" constant="-75" id="QCJ-5b-lvO"/>
+                <constraint firstItem="y0w-E8-AFn" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="16" id="UDW-gb-Nub"/>
                 <constraint firstItem="Yqm-L1-qfh" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Udk-bm-Yhn"/>
                 <constraint firstItem="Yqm-L1-qfh" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.4" id="a8d-xa-fhw"/>
+                <constraint firstItem="DPA-RP-THq" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="16" id="f5c-7R-MfM"/>
+                <constraint firstAttribute="trailing" secondItem="y0w-E8-AFn" secondAttribute="trailing" constant="16" id="ksR-l5-0f9"/>
+                <constraint firstItem="DPA-RP-THq" firstAttribute="top" secondItem="y0w-E8-AFn" secondAttribute="bottom" constant="239.66666666666669" id="oPY-ll-s8w"/>
+                <constraint firstItem="y0w-E8-AFn" firstAttribute="top" secondItem="I9A-uM-oTr" secondAttribute="bottom" constant="77.333333333333314" id="vn0-Z4-dQt"/>
                 <constraint firstAttribute="trailing" secondItem="Yqm-L1-qfh" secondAttribute="trailing" id="xg5-8W-n5P"/>
             </constraints>
             <point key="canvasLocation" x="90.769230769230759" y="16.350710900473931"/>
         </view>
     </objects>
+    <resources>
+        <image name="heart" catalog="system" width="128" height="109"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

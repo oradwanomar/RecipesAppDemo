@@ -37,6 +37,8 @@ class ProductsViewController: UIViewController {
     private func setUpCollection() {
         collectionView.dataSource = self
         collectionView.delegate = self
+        collectionView.register(ProductCollectionViewCell.self, forCellWithReuseIdentifier: ProductCollectionViewCell.cellIdentifier)
+        collectionView.register(HeaderView.self, forSupplementaryViewOfKind: "header", withReuseIdentifier: HeaderView.headIdentifier)
     }
 }
 
@@ -48,11 +50,13 @@ extension ProductsViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        <#code#>
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ProductCollectionViewCell.cellIdentifier, for: indexPath) as! ProductCollectionViewCell
+        return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        
+        let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: HeaderView.headIdentifier, for: indexPath) as! HeaderView
+        return header
     }
     
 }

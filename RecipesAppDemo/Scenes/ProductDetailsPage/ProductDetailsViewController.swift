@@ -11,6 +11,8 @@ class ProductDetailsViewController: UIViewController {
     
     // MARK: Outlets
 
+    @IBOutlet weak var bluredView: UIView!
+    @IBOutlet weak var productImage: UIImageView!
     // MARK: Properties
         
     private let viewModel: ProductDetailsViewModelType
