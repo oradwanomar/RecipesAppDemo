@@ -15,7 +15,6 @@ target 'RecipesAppDemo' do
   target 'RecipesAppDemoUITests' do
     # Pods for testing
   end
-  pod 'Alamofire'
   pod 'Kingfisher'
   pod 'SkeletonView'
 
