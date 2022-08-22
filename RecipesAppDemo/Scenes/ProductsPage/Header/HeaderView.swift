@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol HeaderProtocol: AnyObject{
+    func filterDidSelect(at index: IndexPath)
+}
+
 class HeaderView: UICollectionReusableView {
     
     static let headIdentifier = "headerIdentifier"
@@ -20,6 +24,8 @@ class HeaderView: UICollectionReusableView {
     var lastIndexActive: IndexPath = [1 ,0]
     
     var filters = ["All","LOW SUGER","KETO","VEGAN"]
+    
+    weak var delegate: HeaderProtocol?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -41,11 +47,11 @@ class HeaderView: UICollectionReusableView {
     }
     
     func setUpSearchBar(){
-        let searchBtn = UIButton(frame: CGRect(x: 0, y: 0, width: 30, height: 60))
+        let searchBtn = UIButton(frame: CGRect(x: 0, y: 0, width: 40, height: 60))
         searchBtn.setImage(UIImage(systemName: "magnifyingglass"), for: .normal)
         searchBtn.imageView?.tintColor = .label
         let spacer = UIView()
-        spacer.setDimensions(height: 60, width: 35)
+        spacer.setDimensions(height: 60, width: 45)
         spacer.addSubview(searchBtn)
         NSLayoutConstraint.activate([
             searchBtn.centerXAnchor.constraint(equalTo: spacer.centerXAnchor),

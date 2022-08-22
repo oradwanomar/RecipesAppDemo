@@ -32,13 +32,13 @@
                             </constraints>
                         </view>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Find the best  recipe for you" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hdd-z6-3qC">
-                            <rect key="frame" x="0.0" y="60" width="388" height="598"/>
+                            <rect key="frame" x="0.0" y="60" width="388" height="563"/>
                             <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Find your recipe" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UTs-n0-sxg">
-                            <rect key="frame" x="0.0" y="688" width="388" height="60"/>
+                            <rect key="frame" x="0.0" y="653" width="388" height="60"/>
                             <color key="backgroundColor" systemColor="systemGray6Color"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="60" id="UHs-JI-kdO"/>
@@ -52,7 +52,7 @@
                             </userDefinedRuntimeAttributes>
                         </textField>
                         <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="XuS-up-cpo">
-                            <rect key="frame" x="0.0" y="778" width="388" height="70"/>
+                            <rect key="frame" x="0.0" y="743" width="388" height="70"/>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="70" id="Pft-Ix-TPc"/>
@@ -64,6 +64,13 @@
                                 <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                             </collectionViewFlowLayout>
                         </collectionView>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LQV-xq-o3a">
+                            <rect key="frame" x="0.0" y="843" width="388" height="5"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="5" id="JIq-Cm-zQa"/>
+                            </constraints>
+                        </view>
                     </subviews>
                 </stackView>
             </subviews>

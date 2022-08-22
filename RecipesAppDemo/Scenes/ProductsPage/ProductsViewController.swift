@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Networking
 
 class ProductsViewController: UIViewController {
     
@@ -14,11 +15,13 @@ class ProductsViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     // MARK: Properties
         
-    private let viewModel: ProductsViewModelType
+    private let viewModel: ProductsViewModel
+    var recipesData: [Recipe] = []
+    var health: String = ""
 
     // MARK: Init
         
-    init(viewModel: ProductsViewModelType) {
+    init(viewModel: ProductsViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
@@ -32,6 +35,13 @@ class ProductsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpCollection()
+        
+        viewModel.bindingRecipeViewModelToView = {
+            for i in self.viewModel.recipe.hits {
+                self.recipesData.append(i.recipe)
+            }
+            self.collectionView.reloadData()
+        }
     }
     
     private func setUpCollection() {
@@ -47,16 +57,24 @@ class ProductsViewController: UIViewController {
 extension ProductsViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return recipesData.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ProductCollectionViewCell.cellIdentifier, for: indexPath) as! ProductCollectionViewCell
+        cell.configureCell(recipe: recipesData[indexPath.row])
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        if indexPath.row == recipesData.count - 1 {
+            viewModel.getPaginationsRecipes(health: health)
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: HeaderView.headIdentifier, for: indexPath) as! HeaderView
+        header.delegate = self
         return header
     }
     
@@ -65,7 +83,10 @@ extension ProductsViewController: UICollectionViewDataSource {
 // MARK: - UICollectionViewDataSource
 extension ProductsViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
+        let prodDetailsviewModel = ProductDetailsViewModel(recipe: recipesData[indexPath.row])
+        let pVC = ProductDetailsViewController(viewModel: prodDetailsviewModel)
+        pVC.modalPresentationStyle = .custom
+        self.present(pVC, animated: true)
     }
 }
 
@@ -84,7 +105,7 @@ extension ProductsViewController : UICollectionViewDelegateFlowLayout {
         return CGSize(width: width, height: height)
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-        return CGSize(width: view.frame.width, height: 330)
+        return CGSize(width: collectionView.frame.width, height: 370)
     }
 }
 // MARK: - Actions
@@ -97,9 +118,35 @@ extension ProductsViewController {
 //
 extension ProductsViewController {
     
+    func createSpinner() -> UIActivityIndicatorView{
+        let spinner = UIActivityIndicatorView()
+        spinner.center = view.center
+        view.addSubview(spinner)
+        spinner.startAnimating()
+        return spinner
+    }
+    
 }
 
 // MARK: - Private Handlers
 //
-private extension ProductsViewController {
+extension ProductsViewController: HeaderProtocol {
+    func filterDidSelect(at index: IndexPath) {
+        self.recipesData.removeAll()
+        
+        switch index.row {
+        case 1:
+            health = "low-sugar"
+            viewModel.getRecipes(health: health)
+        case 2:
+            health = "keto-friendly"
+        case 3:
+            health = "vegan"
+        default:
+            health = ""
+        }
+        viewModel.getRecipes(health: health)
+        self.collectionView.reloadData()
+    }
+    
 }

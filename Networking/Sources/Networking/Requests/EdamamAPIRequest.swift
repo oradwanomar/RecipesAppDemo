@@ -42,7 +42,7 @@ struct EdamamAPIRequest: URLRequestConvertible {
     /// Returns a URLRequest instance reprensenting the current FakeStore Request.
     ///
     func asURLRequest() throws -> URLRequest {
-        let url = URL(string: Settings.storeApiBaseURL + path)!
+        let url = URL(string: APISettings.baseURL + path)!
         let request = try URLRequest(url: url, method: method, headers: nil)
 
         return try encoder.encode(request, with: parameters)

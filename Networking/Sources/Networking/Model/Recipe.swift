@@ -8,30 +8,30 @@
 import Foundation
 
 // MARK: - RecipeResponse
-struct RecipeModel:Codable {
-    let q: String
-    let from: Int
-    let to: Int
-    let more: Bool
-    let count: Int
-    let hits: [Hit]
+public struct RecipeModel:Codable {
+    public let q: String
+    public let from: Int
+    public let to: Int
+    public let more: Bool
+    public let count: Int
+    public let hits: [Hit]
 }
 
 // MARK: - Hit
-struct Hit:Codable {
-    let recipe: Recipe
+public struct Hit:Codable {
+    public let recipe: Recipe
 }
 
 // MARK: - Recipe
-struct Recipe:Codable {
-    let uri: String
-    let label: String
-    let image: String
-    let source: String
-    let url: String
-    let dietLabels: [String]
-    let healthLabels: [String]
-    let ingredientLines:[String]
+public struct Recipe:Codable {
+    public let uri: String
+    public let label: String
+    public let image: String
+    public let source: String
+    public let url: String
+    public let dietLabels: [String]
+    public let healthLabels: [String]
+    public let ingredientLines:[String]
 }
 
 //struct RecipeViewModel {

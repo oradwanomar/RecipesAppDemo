@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Networking
 
 /// Products Input & Output
 ///
@@ -14,11 +15,11 @@ typealias ProductsViewModelType = ProductsViewModelInput & ProductsViewModelOutp
 /// Products ViewModel Input
 ///
 protocol ProductsViewModelInput {
-  
+    func getPaginationsRecipes(health: String)
 }
 
 /// Products ViewModel Output
 ///
 protocol ProductsViewModelOutput {
-//    func getProducts(completion: @escaping ([Product])->Void)
+    func getRecipes(health: String,from: Int, to: Int)
 }

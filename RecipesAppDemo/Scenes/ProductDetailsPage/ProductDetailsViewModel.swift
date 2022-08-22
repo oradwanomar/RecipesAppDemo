@@ -6,11 +6,17 @@
 //
 
 import Foundation
+import Networking
 
 // MARK: ProductDetailsViewModel
 //
 class ProductDetailsViewModel {
-  
+     
+    var recipeDetail: Recipe?
+    
+    init(recipe: Recipe? = nil){
+        self.recipeDetail = recipe
+    }
 }
 
 // MARK: ProductDetailsViewModel

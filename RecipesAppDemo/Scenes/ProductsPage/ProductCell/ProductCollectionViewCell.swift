@@ -6,34 +6,15 @@
 //
 
 import UIKit
+import Networking
+import Kingfisher
+import SkeletonView
 
 class ProductCollectionViewCell: UICollectionViewCell {
     
     static let cellIdentifier = "RestaurantListCollectionViewCell"
     var benefitHeightConstrains: NSLayoutConstraint?
     var locationHeightConstrains: NSLayoutConstraint?
-    
-//    var cellData : RestaurantListModel? {
-//        didSet {
-//            guard let cellData = cellData else {return}
-//            restaurantName.text = cellData.restaurantName
-//            restaurantImgCover.image = UIImage(named: cellData.restaurantCoverImage)
-//            restaurantInfoLabel.attributedText = setRestaurantInfoLabel(withRating: cellData.rating, withTime: "\(cellData.time) mins", withDesc: cellData.description)
-//            restaurantTagLabel.text = cellData.tags
-//            restaurantLocationLabel.text = cellData.location
-//            if cellData.isFreeDelivery {
-//                offerLabel.attributedText = setOfferAttributedLabel(withTitle: "20% Off", withSubtitle: "upto ₹140")
-//                locationHeightConstrains?.constant = -8
-//                benefitHeightConstrains?.constant = 30
-//                benefitLabel.text = cellData.benefitDesc.uppercased()
-//            } else {
-//                offerLabel.attributedText = setOfferAttributedLabel(withTitle: "50% Off", withSubtitle: "upto ₹120")
-//                locationHeightConstrains?.constant = -30
-//                benefitHeightConstrains?.constant = 0
-//                benefitLabel.text = ""
-//            }
-//        }
-//    }
     
     //MARK: Prop
     lazy var restaurantImageCard: UIView = {
@@ -144,6 +125,13 @@ class ProductCollectionViewCell: UICollectionViewCell {
         setUpConstrains()
     }
     
+    func configureCell(recipe: Recipe){
+        restaurantImgCover.kf.indicatorType = .activity
+        restaurantImgCover.kf.setImage(with: URL(string: recipe.image))
+        restaurantName.text = recipe.label
+        restaurantInfoLabel.text = recipe.source
+    }
+    
     func configure(){
         addSubview(restaurantImageCard)
         restaurantImageCard.addSubview(restaurantImgCover)
@@ -175,7 +163,7 @@ class ProductCollectionViewCell: UICollectionViewCell {
         gradientView.setUp(to: benefitView)
         
         NSLayoutConstraint.activate([
-            restaurantImageCard.leadingAnchor.constraint(equalTo: leadingAnchor),
+            restaurantImageCard.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 20),
             restaurantImageCard.topAnchor.constraint(equalTo: topAnchor, constant: 5),
             restaurantImageCard.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -10),
             restaurantImageCard.widthAnchor.constraint(equalToConstant: 100),
@@ -190,7 +178,7 @@ class ProductCollectionViewCell: UICollectionViewCell {
             restaurantName.bottomAnchor.constraint(equalTo: restaurantInfoLabel.topAnchor, constant: -3),
             
             restaurantInfoLabel.leadingAnchor.constraint(equalTo: restaurantImageCard.trailingAnchor, constant: 15),
-            restaurantInfoLabel.trailingAnchor.constraint(equalTo: trailingAnchor),
+            restaurantInfoLabel.trailingAnchor.constraint(equalTo: trailingAnchor,constant: -20),
             restaurantInfoLabel.bottomAnchor.constraint(equalTo: restaurantTagLabel.topAnchor, constant: -5),
             
             restaurantTagLabel.leadingAnchor.constraint(equalTo: restaurantImageCard.trailingAnchor, constant: 15),
@@ -201,7 +189,7 @@ class ProductCollectionViewCell: UICollectionViewCell {
             restaurantLocationLabel.trailingAnchor.constraint(equalTo: trailingAnchor),
             
             benefitView.leadingAnchor.constraint(equalTo: restaurantImageCard.trailingAnchor, constant: 15),
-            benefitView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            benefitView.trailingAnchor.constraint(equalTo: trailingAnchor,constant: -20),
             benefitView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -15),
             
             benefitLabel.leadingAnchor.constraint(equalTo: benefitView.leadingAnchor, constant: 5),

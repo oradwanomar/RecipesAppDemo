@@ -15,11 +15,11 @@ class ProductDetailsViewController: UIViewController {
     @IBOutlet weak var productImage: UIImageView!
     // MARK: Properties
         
-    private let viewModel: ProductDetailsViewModelType
+    private let viewModel: ProductDetailsViewModel
 
     // MARK: Init
         
-    init(viewModel: ProductDetailsViewModelType) {
+    init(viewModel: ProductDetailsViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
@@ -32,12 +32,14 @@ class ProductDetailsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        bluredView.backgroundColor = .clear
-        let blurEffect = UIBlurEffect(style: .dark)
-        let blurEffectView = UIVisualEffectView(effect: blurEffect)
-        blurEffectView.frame = view.bounds
-        blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        bluredView.addSubview(blurEffectView)
+        configureNavBar()
+        configureBlurView()
+        productImage.kf.setImage(with: URL(string: viewModel.recipeDetail?.image ?? ""))
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        configureNavBar()
     }
 }
 
@@ -50,6 +52,23 @@ extension ProductDetailsViewController {
 // MARK: - Configurations
 //
 extension ProductDetailsViewController {
+    func configureNavBar(){
+        navigationController?.navigationBar.shadowImage = UIImage()
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "square.and.arrow.up.circle"), style: .plain, target: self, action: nil)
+        navigationItem.rightBarButtonItem?.tintColor = .label
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .done, target: self, action: nil)
+    }
+    
+    
+    func configureBlurView(){
+        bluredView.backgroundColor = .clear
+        let blurEffect = UIBlurEffect(style: .dark)
+        let blurEffectView = UIVisualEffectView(effect: blurEffect)
+        blurEffectView.frame = bluredView.bounds
+        blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        bluredView.addSubview(blurEffectView)
+        bluredView.layer.cornerRadius = 40
+    }
     
 }
 
