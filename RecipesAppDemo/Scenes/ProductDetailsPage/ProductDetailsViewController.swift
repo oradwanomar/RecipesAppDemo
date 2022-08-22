@@ -68,7 +68,7 @@ extension ProductDetailsViewController {
     
     func configureBlurView(){
         bluredView.backgroundColor = .clear
-        let blurEffect = UIBlurEffect(style: .dark)
+        let blurEffect = UIBlurEffect(style: .systemUltraThinMaterialDark)
         let blurEffectView = UIVisualEffectView(effect: blurEffect)
         blurEffectView.frame = bluredView.bounds
         blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
