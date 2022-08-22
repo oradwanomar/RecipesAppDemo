@@ -17,6 +17,10 @@ class HeaderView: UICollectionReusableView {
     
     @IBOutlet weak var filterCollectionView: UICollectionView!
     
+    var lastIndexActive: IndexPath = [1 ,0]
+    
+    var filters = ["All","LOW SUGER","KETO","VEGAN"]
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         commonInit()
@@ -36,12 +40,6 @@ class HeaderView: UICollectionReusableView {
         setUpCollection()
     }
     
-    func setUpCollection() {
-        filterCollectionView.delegate = self
-        filterCollectionView.dataSource = self
-        filterCollectionView.register(FilterCell.self, forCellWithReuseIdentifier: FilterCell.identifier)
-    }
-    
     func setUpSearchBar(){
         let searchBtn = UIButton(frame: CGRect(x: 0, y: 0, width: 30, height: 60))
         searchBtn.setImage(UIImage(systemName: "magnifyingglass"), for: .normal)
@@ -59,19 +57,4 @@ class HeaderView: UICollectionReusableView {
     }
 }
 
-extension HeaderView: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        4
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FilterCell.identifier, for: indexPath) as! FilterCell
-        return cell
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        CGSize(width: 90, height: 50)
-    }
-    
-}
+

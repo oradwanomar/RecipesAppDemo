@@ -13,7 +13,7 @@ class FilterCell: UICollectionViewCell {
     lazy var filterName: UILabel = {
         let label = UILabel()
         label.text = "Hello"
-        label.font = UIFont.systemFont(ofSize: 20, weight: .bold)
+        label.font = UIFont.systemFont(ofSize: 15, weight: .bold)
         label.textColor = .lightGray
         label.textAlignment = .center
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -24,7 +24,7 @@ class FilterCell: UICollectionViewCell {
         let d = UIView()
         d.translatesAutoresizingMaskIntoConstraints = false
         d.layer.cornerRadius = 5
-        d.backgroundColor = .orange
+        d.backgroundColor = .systemBackground
         return d
     }()
     
@@ -46,6 +46,10 @@ class FilterCell: UICollectionViewCell {
             dotView.centerXAnchor.constraint(equalTo: filterName.centerXAnchor),
             dotView.topAnchor.constraint(equalTo: filterName.bottomAnchor, constant: 8)
         ])
+    }
+    
+    func configure(filter: String){
+        filterName.text = filter
     }
     
     required init?(coder: NSCoder) {

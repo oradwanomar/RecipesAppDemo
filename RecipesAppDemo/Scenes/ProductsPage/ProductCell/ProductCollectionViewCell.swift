@@ -79,6 +79,7 @@ class ProductCollectionViewCell: UICollectionViewCell {
         res.translatesAutoresizingMaskIntoConstraints = false
         res.font = UIFont.systemFont(ofSize: 15,weight: .bold)
         res.textColor = .label
+        res.text = "Zimoz ast. lv"
         return res
     }()
     
@@ -164,6 +165,8 @@ class ProductCollectionViewCell: UICollectionViewCell {
             gradientView.setGradient(withColors: [UIColor.white.withAlphaComponent(0).cgColor, UIColor.orange.withAlphaComponent(0.3).cgColor], startPoint: CGPoint(x: 0.0, y: 1.0), endPoint: CGPoint(x: 1.0, y: 1.0))
         }
         
+        offerLabel.attributedText = setOfferAttributedLabel(withTitle: "20% Off", withSubtitle: "upto ₹140")
+        benefitLabel.text = "extra 20% off + free delivery".uppercased()
     }
     
     func setUpConstrains(){
