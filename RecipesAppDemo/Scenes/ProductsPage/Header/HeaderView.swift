@@ -32,11 +32,7 @@ class HeaderView: UICollectionReusableView {
         addSubview(contentView)
         contentView.frame = bounds
         contentView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
-        let spacer = UIView()
-        spacer.setDimensions(height: 60, width: 12)
-        searchTextView.leftView = spacer
-        searchTextView.leftViewMode = .always
-        searchTextView.layer.cornerRadius = 10
+        setUpSearchBar()
         setUpCollection()
     }
     
@@ -44,6 +40,22 @@ class HeaderView: UICollectionReusableView {
         filterCollectionView.delegate = self
         filterCollectionView.dataSource = self
         filterCollectionView.register(FilterCell.self, forCellWithReuseIdentifier: FilterCell.identifier)
+    }
+    
+    func setUpSearchBar(){
+        let searchBtn = UIButton(frame: CGRect(x: 0, y: 0, width: 30, height: 60))
+        searchBtn.setImage(UIImage(systemName: "magnifyingglass"), for: .normal)
+        searchBtn.imageView?.tintColor = .label
+        let spacer = UIView()
+        spacer.setDimensions(height: 60, width: 35)
+        spacer.addSubview(searchBtn)
+        NSLayoutConstraint.activate([
+            searchBtn.centerXAnchor.constraint(equalTo: spacer.centerXAnchor),
+            searchBtn.centerYAnchor.constraint(equalTo: spacer.centerYAnchor),
+        ])
+        searchTextView.leftView = spacer
+        searchTextView.leftViewMode = .always
+        searchTextView.layer.cornerRadius = 10
     }
 }
 
