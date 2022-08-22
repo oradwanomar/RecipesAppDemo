@@ -11,6 +11,6 @@
 
 ## - RecipesAppDemo
 
-## Contain two pages 
-### - Main Page for filteration 
-### - Reecipe Details
+### Contain two pages 
+#### - Main Page for filteration 
+#### - Reecipe Details
