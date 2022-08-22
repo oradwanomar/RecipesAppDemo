@@ -33,21 +33,3 @@ public struct Recipe:Codable {
     public let healthLabels: [String]
     public let ingredientLines:[String]
 }
-
-//struct RecipeViewModel {
-//    var image:String
-//    var title:String
-//    var source:String
-//    var healthLabels:[String]
-//    let ingredientLines:[String]
-//    let url:String
-//
-//    init(recipe:Recipe) {
-//        image = recipe.image
-//        title = recipe.label
-//        source = recipe.source
-//        healthLabels = recipe.healthLabels
-//        ingredientLines = recipe.ingredientLines
-//        url = recipe.url
-//    }
-//}
