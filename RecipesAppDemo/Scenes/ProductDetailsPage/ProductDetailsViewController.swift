@@ -11,6 +11,7 @@ class ProductDetailsViewController: UIViewController {
     
     // MARK: Outlets
 
+    @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var bluredView: UIView!
     @IBOutlet weak var productImage: UIImageView!
@@ -35,6 +36,7 @@ class ProductDetailsViewController: UIViewController {
         super.viewDidLoad()
         configureNavBar()
         configureBlurView()
+        configureTextView()
         productImage.kf.setImage(with: URL(string: viewModel.recipeDetail?.image ?? ""))
         nameLabel.text = viewModel.recipeDetail?.label
     }
@@ -74,6 +76,15 @@ extension ProductDetailsViewController {
         blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         bluredView.addSubview(blurEffectView)
         bluredView.layer.cornerRadius = 40
+    }
+    
+    func configureTextView(){
+        var ingradientLines = ""
+        guard let viewModelIngradiens = viewModel.recipeDetail else {return}
+        for i in viewModelIngradiens.ingredientLines {
+            ingradientLines = "\(ingradientLines + i).\n"
+        }
+        textView.text = ingradientLines
     }
     
 }
