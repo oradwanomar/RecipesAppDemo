@@ -516,7 +516,6 @@
 				8597102628B0766B00A350BE /* SceneDelegate.swift in Sources */,
 				85AD040628B1CC3100BCD22F /* HeaderView.swift in Sources */,
 				85AD040128B174AB00BCD22F /* ProductDetailsViewController.swift in Sources */,
-				8597102628B0766B00A350BE /* SceneDelegate.swift in Sources */,
 				85AD03F628B159B500BCD22F /* ProductsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
