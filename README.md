@@ -5,11 +5,12 @@
 ## This project is contain of Two main layers :- 
 
 ## - Network Layer as a Package 
-###1- choose network type
-###2- make remote call for API
-###3- get the endpoint and the succes or failre for response
+### 1- choose network type
+### 2- make remote call for API
+### 3- get the endpoint and the succes or failre for response
 
-### - RecipesAppDemo
+## - RecipesAppDemo
+
 ## Contain two pages 
 ### - Main Page for filteration 
 ### - Reecipe Details
