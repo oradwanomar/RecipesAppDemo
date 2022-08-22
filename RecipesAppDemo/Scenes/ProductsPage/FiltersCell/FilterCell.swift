@@ -10,7 +10,7 @@ import UIKit
 class FilterCell: UICollectionViewCell {
     static let identifier = "FilterCell"
     
-    lazy var label: UILabel = {
+    lazy var filterName: UILabel = {
         let label = UILabel()
         label.text = "Hello"
         label.textColor = .label
@@ -20,15 +20,15 @@ class FilterCell: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        addSubview(label)
+        addSubview(filterName)
         setUpConstrains()
     }
     
     func setUpConstrains(){
         NSLayoutConstraint.activate([
-            label.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 0),
-            label.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 0),
-            label.heightAnchor.constraint(equalToConstant: 30)
+            filterName.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 0),
+            filterName.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 0),
+            filterName.heightAnchor.constraint(equalToConstant: 30)
         ])
     }
     
