@@ -84,7 +84,7 @@ extension ProductsViewController: UICollectionViewDataSource {
 extension ProductsViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let prodDetailsviewModel = ProductDetailsViewModel(recipe: recipesData[indexPath.row])
-        let pVC = ProductDetailsViewController(viewModel: prodDetailsviewModel)
+        let pVC = CustomNavigationViewController(rootViewController: ProductDetailsViewController(viewModel: prodDetailsviewModel))
         pVC.modalPresentationStyle = .custom
         self.present(pVC, animated: true)
     }
@@ -105,7 +105,7 @@ extension ProductsViewController : UICollectionViewDelegateFlowLayout {
         return CGSize(width: width, height: height)
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-        return CGSize(width: collectionView.frame.width, height: 370)
+        return CGSize(width: collectionView.frame.width, height: 360)
     }
 }
 // MARK: - Actions
